@@ -4,11 +4,11 @@ pangeo:
     proxy:
       https:
         hosts:
-        - staging.nasa.pangeo.io
+        - staging.pangeo-csiro.munroelab.ca
         letsencrypt:
-          contactEmail: scottyh@uw.edu
-      service:
-        loadBalancerIP: a7e74bdca654d11e9aa8d024800b3463-192714893.us-east-1.elb.amazonaws.com
+          contactEmail: James.Munroe@csiro.au
+      #service:
+      #  loadBalancerIP: a7e74bdca654d11e9aa8d024800b3463-192714893.us-east-1.elb.amazonaws.com
     auth:
       github:
-        callbackUrl: "https://staging.nasa.pangeo.io/hub/oauth_callback"
+        callbackUrl: "https://staging.pangeo-csiro.munroelab.ca/hub/oauth_callback"
