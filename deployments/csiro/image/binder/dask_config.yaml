@@ -40,7 +40,7 @@ kubernetes:
           volumeMounts:
             - name: nfs
               mountPath: /home/jovyan
-              subPath: "nasa.pangeo.io/home/${JUPYTERHUB_USER}"
+              subPath: "pangeo-csiro.munroelab.ca/home/${JUPYTERHUB_USER}"
       volumes:
         - name: nfs
           persistentVolumeClaim:
