@@ -31,8 +31,8 @@ jobs:
             pip install --upgrade -r requirements.txt
             
             # create a default docker config file
-            mkdir -p ~/.docker
-            echo '' >> ~/.docker/config.json
+            mkdir -p ${HOME}/.docker
+            echo '' >> ${HOME}/.docker/config.json
 
             # See https://github.com/pangeo-data/pangeo-cloud-federation/issues/120
             # Until https://github.com/jupyter/repo2docker/pull/605
@@ -99,6 +99,10 @@ jobs:
             export GOPATH=$PWD/venv
             go get -u github.com/awslabs/amazon-ecr-credential-helper/ecr-login/cli/docker-credential-ecr-login
 
+            # create a default docker config file
+            mkdir -p ${HOME}/.docker
+            echo '' >> ${HOME}/.docker/config.json
+           
             # Can be removed once https://github.com/docker/docker-py/issues/2225 is merged and released
             pip install --upgrade git+https://github.com/docker/docker-py.git@b6f6e7270ef1acfe7398b99b575d22d0d37ae8bf
 
