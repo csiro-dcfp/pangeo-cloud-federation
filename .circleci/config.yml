@@ -53,7 +53,7 @@ jobs:
           name: Test building pangeo-csiro.munroelab.ca image if needed
           when: always
           command: |
-            hubploy build pangeo-csiro --commit-range ${COMMIT_RANGE}
+            hubploy build csiro --commit-range ${COMMIT_RANGE}
           environment:
             PYTHONIOENCODING: utf-8
 
@@ -124,7 +124,7 @@ jobs:
           name: Build pangeo-csiro.munroelab.ca image if needed
           when: always
           command: |
-            hubploy build pangeo-csiro --check-registry --push
+            hubploy build csiro --check-registry --push
           environment:
             PYTHONIOENCODING: utf-8
 
@@ -143,7 +143,7 @@ jobs:
           name: Deploy pangeo-csiro.munroelab.ca
           when: always
           command: |
-            hubploy deploy pangeo-csiro pangeo-deploy ${CIRCLE_BRANCH}
+            hubploy deploy csiro pangeo-deploy ${CIRCLE_BRANCH}
 
 
 workflows:
