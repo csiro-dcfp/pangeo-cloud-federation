@@ -14,13 +14,14 @@ ocean  | GCP: us-central1-b | https://staging.ocean.pangeo.io  | https://ocean.p
 hydro  | GCP: us-central1-b | https://staging.hydro.pangeo.io  | https://hydro.pangeo.io
 nasa   | AWS: us-east-1     | https://staging.nasa.pangeo.io   | https://nasa.pangeo.io
 icesat | AWS: us-west-2     | https://staging.icesat.pangeo.io | https://icesat.pangeo.io
+csiro  | AWS: ap-southeast-2 | https://staging.pangeo-csiro.munroelab.ca | https://pangeo-csiro.munroelab.ca
 
 # Build Status
 
 Branch | Build
 -- |-
-staging | [![CircleCI](https://circleci.com/gh/pangeo-data/pangeo-cloud-federation/tree/staging.svg?style=svg)](https://circleci.com/gh/pangeo-data/pangeo-cloud-federation/tree/staging)
-prod | [![CircleCI](https://circleci.com/gh/pangeo-data/pangeo-cloud-federation/tree/prod.svg?style=svg)](https://circleci.com/gh/pangeo-data/pangeo-cloud-federation/tree/prod)
+staging | [![CircleCI](https://circleci.com/gh/csiro-dcfp/pangeo-cloud-federation/tree/staging.svg?style=svg)](https://circleci.com/gh/pangeo-data/pangeo-cloud-federation/tree/staging)
+prod | [![CircleCI](https://circleci.com/gh/csiro-dcfp/pangeo-cloud-federation/tree/prod.svg?style=svg)](https://circleci.com/gh/pangeo-data/pangeo-cloud-federation/tree/prod)
 
 # Setup
 

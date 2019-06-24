@@ -15,11 +15,11 @@ pangeo:
           volumeMounts:
             - name: home
               mountPath: /home/jovyan
-              subPath: "nasa.pangeo.io/home/{username}"
+              subPath: "pangeo-csiro.munroelab.ca/home/{username}"
               # Alternatively, ssh into node and chown once
             - name: jupyterhub-shared
               mountPath: /srv/shared
-              subPath: "nasa.pangeo.io/shared"
+              subPath: "pangeo-csiro.munroelab.ca/shared"
       extraVolumes:
         - name: jupyterhub-shared
           persistentVolumeClaim:
@@ -41,12 +41,12 @@ pangeo:
         type: static
         static:
           pvcName: home-nfs
-          subPath: "nasa.pangeo.io/home/{username}"
+          subPath: "pangeo-csiro.munroelab.ca/home/{username}"
         #requires having run config/shared--nfs.yaml
         extraVolumeMounts:
           - name: jupyterhub-shared
             mountPath: /srv/shared
-            subPath: "nasa.pangeo.io/shared"
+            subPath: "pangeo-csiro.munroelab.ca/shared"
         extraVolumes:
           - name: jupyterhub-shared
             persistentVolumeClaim:
@@ -64,32 +64,23 @@ pangeo:
         guarantee: 14G
       profileList:
         - display_name: "Default environment (m5.2xlarge | 4 cores, 16Gb)"
-          description: "NASA environment extending pangeo-notebook"
+          description: "CSIRO environment extending pangeo-notebook"
           default: true
         - display_name: "Pangeo-notebook (m5.2xlarge | 4 cores, 16Gb)"
           description: "latest pangeo-notebook from pangeo stacks"
           kubespawner_override:
             image: pangeo/pangeo-notebook:latest
-        - display_name: "AmesStereoPipeline *experimental* (m5.2xlarge | 4 cores, 16Gb)"
-          description: "Pangeo-notebook + ASP Daily Build 2019.04.29"
-          kubespawner_override:
-            image: scottyhq/pangeo-nasa-asp:2019.04.29
     auth:
       github:
         orgWhitelist:
-          - "escience-pangeo"
-          - "ICESAT-2HackWeek"
-          - "pangeo-data"
+          - "csiro-dcfp"
       scopes:
         - "read:user"
         - "read:org"
       admin:
         access: true
         users:
-          - scottyhq
-          - jhamman
-          - apawloski
-          - amanda-tan
+          - jmunroe
     proxy:
       nodeSelector:
         alpha.eksctl.io/nodegroup-name: hub
@@ -116,9 +107,9 @@ pangeo:
         customPodHook: |
           c.JupyterHub.template_paths = ['/srv/jupyterhub/style/templates']
           c.JupyterHub.template_vars = {
-            'pangeo_hub_title': 'nasa.pangeo.io',
-            'pangeo_hub_subtitle': 'a community hub for the NASA ACCESS project',
-            'pangeo_welcome': """Welcome to nasa.pangeo.io! This hub lives in AWS region <code>us-east-1</code>. It is maintained by the <a href="http://pangeo.io">Pangeo project</a> and is supported by <a href="https://github.com/pangeo-data/nasa-access-17">NASA Grant #17-ACCESS17-0003</a> and cloud credits from Amazon. Access is currently limited to the <a href="https://github.com/pangeo-data">Pangeo GitHub Organization</a>. The hub's configuration is stored in this <a href="https://github.com/pangeo-data/pangeo-cloud-federation/">github repository</a>. To provide feedback and report any technical problems, please use the <a href="https://github.com/pangeo-data/pangeo-cloud-federation/issues">github issue tracker</a>."""
+            'pangeo_hub_title': 'csiro-pangeo.munroelab.ca',
+            'pangeo_hub_subtitle': 'a community hub for the CSIRO DCFP project',
+            'pangeo_welcome': """Welcome to csiro-pangeo.munroelab.ca! This hub lives in AWS region <code>ap-southeast-2</code>. It is maintained and supported by the <a href="https://research.csiro.au/dfp/">CSIRO DCFP project</a> with cloud credits from Amazon. Access is currently limited to the <a href="https://github.com/csiro-dcfp">CSIRO DCFP GitHub Organization</a>. The hub's configuration is stored in this <a href="https://github.com/csiro-dcfp/pangeo-cloud-federation/">github repository</a>. To provide feedback and report any technical problems, please use the <a href="https://github.com/pangeo-data/pangeo-cloud-federation/issues">github issue tracker</a>."""
           }
       extraVolumes:
         - name: custom-assets
@@ -131,4 +122,4 @@ pangeo:
 homeDirectories:
   nfs:
     enabled: true
-    serverIP: fs-545941b4.efs.us-east-1.amazonaws.com
+    serverIP: fs-f04c0bc9.efs.ap-southeast-2.amazonaws.com

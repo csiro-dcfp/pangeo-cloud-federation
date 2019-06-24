@@ -1,0 +1,17 @@
+images:
+  image_name: 669462648944.dkr.ecr.ap-southeast-2.amazonaws.com/pangeo-csiro
+  image_config_path: pangeo.jupyterhub.singleuser.image
+  registry:
+    provider: aws
+    aws:
+      project: 669462648944
+      service_key: aws-config.txt
+      zone: ap-southeast-2
+
+cluster:
+  provider: aws
+  aws:
+    project: 669462648944
+    service_key: aws-config.txt
+    cluster: pangeo-csiro
+    zone: ap-southeast-2

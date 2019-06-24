@@ -1,0 +1,14 @@
+# Leave commented for first build, then uncomment and add loadBalancerIP
+pangeo:
+  jupyterhub:
+    proxy:
+      https:
+        hosts:
+        - pangeo-csiro.munroelab.ca
+        letsencrypt:
+          contactEmail: James.Munroe@csiro.au
+      #service:
+        #loadBalancerIP: a3addbd7967b511e9aa8d024800b3463-1535357642.us-east-1.elb.amazonaws.com
+    auth:
+      github:
+        callbackUrl: "https://pangeo-csiro.munroelab.ca/hub/oauth_callback"
