@@ -13,5 +13,5 @@ cluster:
   aws:
     project: 669462648944
     service_key: aws-config.txt
-    cluster: pangeo-csiro-dcfp
+    cluster: pangeo-csiro
     zone: ap-southeast-2
