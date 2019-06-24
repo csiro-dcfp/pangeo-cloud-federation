@@ -7,8 +7,8 @@ pangeo:
         - staging.pangeo-csiro.munroelab.ca
         letsencrypt:
           contactEmail: James.Munroe@csiro.au
-      #service:
-      #  loadBalancerIP: a7e74bdca654d11e9aa8d024800b3463-192714893.us-east-1.elb.amazonaws.com
+      service:
+        loadBalancerIP: a17c21a3e96b611e9a7340a8937cf3e6-414565530.ap-southeast-2.elb.amazonaws.com
     auth:
       github:
         callbackUrl: "https://staging.pangeo-csiro.munroelab.ca/hub/oauth_callback"
