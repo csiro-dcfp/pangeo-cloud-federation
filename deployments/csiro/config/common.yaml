@@ -98,7 +98,7 @@ pangeo:
         cloneRepo: |
           # Hack solution for branding
           import os, shutil
-          repo = 'https://github.com/scottyhq/pangeo-custom-jupyterhub-templates'
+          repo = 'https://github.com/csiro-dcfp/pangeo-custom-jupyterhub-templates'
           webdir = '/usr/local/share/jupyterhub/static'
           dst = '/srv/jupyterhub/style'
           shutil.rmtree(dst, ignore_errors=True)
@@ -122,4 +122,4 @@ pangeo:
 homeDirectories:
   nfs:
     enabled: true
-    serverIP: fs-f04c0bc9.efs.ap-southeast-2.amazonaws.com
+    serverIP: fs-f1f7b0c8.efs.ap-southeast-2.amazonaws.com

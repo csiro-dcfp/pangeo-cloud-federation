@@ -7,8 +7,8 @@ pangeo:
         - pangeo-csiro.munroelab.ca
         letsencrypt:
           contactEmail: James.Munroe@csiro.au
-      service:
-        loadBalancerIP: ab7e2a5f596b811e9a7340a8937cf3e6-866213249.ap-southeast-2.elb.amazonaws.com
+      #service:
+      #  loadBalancerIP: ab7e2a5f596b811e9a7340a8937cf3e6-866213249.ap-southeast-2.elb.amazonaws.com
     auth:
 
       github:

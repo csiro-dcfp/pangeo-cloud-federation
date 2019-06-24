@@ -15,7 +15,7 @@ spec:
   #   - uid=1000
   #   - gid=1000
   nfs:
-    server: fs-f04c0bc9.efs.ap-southeast-2.amazonaws.com
+    server: fs-f1f7b0c8.efs.ap-southeast-2.amazonaws.com
     path: "/"
 ---
 apiVersion: v1
