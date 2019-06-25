@@ -109,7 +109,7 @@ pangeo:
           c.JupyterHub.template_vars = {
             'pangeo_hub_title': 'csiro-pangeo.munroelab.ca',
             'pangeo_hub_subtitle': 'a community hub for the CSIRO DCFP project',
-            'pangeo_welcome': """Welcome to csiro-pangeo.munroelab.ca! This hub lives in AWS region <code>ap-southeast-2</code>. It is maintained and supported by the <a href="https://research.csiro.au/dfp/">CSIRO DCFP project</a> with cloud credits from Amazon. Access is currently limited to the <a href="https://github.com/csiro-dcfp">CSIRO DCFP GitHub Organization</a>. The hub's configuration is stored in this <a href="https://github.com/csiro-dcfp/pangeo-cloud-federation/">github repository</a>. To provide feedback and report any technical problems, please use the <a href="https://github.com/pangeo-data/pangeo-cloud-federation/issues">github issue tracker</a>."""
+            'pangeo_welcome': """Welcome to pangeo-csiro.munroelab.ca! This hub lives in AWS region <code>ap-southeast-2</code>. It is maintained and supported by the <a href="https://research.csiro.au/dfp/">CSIRO DCFP project</a> with cloud credits from Amazon. Access is currently limited to the <a href="https://github.com/csiro-dcfp">CSIRO DCFP GitHub Organization</a>. The hub's configuration is stored in this <a href="https://github.com/csiro-dcfp/pangeo-cloud-federation/">github repository</a>. To provide feedback and report any technical problems, please use the <a href="https://github.com/pangeo-data/pangeo-cloud-federation/issues">github issue tracker</a>."""
           }
       extraVolumes:
         - name: custom-assets
