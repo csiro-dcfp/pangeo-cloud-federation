@@ -1,4 +1,4 @@
-name: icesat2
+name: pangeo
 channels:
   - conda-forge
 dependencies:
@@ -14,7 +14,7 @@ dependencies:
   - curl=7.64
   - python=3.6
   - xarray=0.12
-  - zarr=2.2
+  - zarr=2.3
   - h5py=2.9
   - h5netcdf=0.7
   - dask=1.1
@@ -39,11 +39,8 @@ dependencies:
   - rasterio=1.0
   - pyresample
   - geocube
-  - rioxarray
   - regionmask
   - pip:
-    - rio-cogeo
-    - sat-search==0.2.0
     - dask-labextension==0.3.1
     - git+https://github.com/pangeo-data/intake-stac.git
     - nbgitpuller
