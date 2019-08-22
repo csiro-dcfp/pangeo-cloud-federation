@@ -160,20 +160,6 @@ jobs:
             PYTHONIOENCODING: utf-8
       
       - run:
-          name: Build esip.pangeo.io image if needed
-          command: |
-            hubploy build esip --check-registry --push
-          environment:
-            PYTHONIOENCODING: utf-8
-
-      - run:
-          name: Build ooi.pangeo.io image if needed
-          command: |
-            hubploy build ooi --check-registry --push
-          environment:
-            PYTHONIOENCODING: utf-8
-
-      - run:
           name: Install helm
           when: always
           command: |
@@ -186,40 +172,8 @@ jobs:
 
       - run:
           name: Deploy pangeo-csiro.munroelab.ca 
-          when: always
           command: |
             hubploy deploy csiro pangeo-deploy ${CIRCLE_BRANCH}
-
-      - run:
-          name: Deploy ocean.pangeo.io
-          command: |
-            hubploy deploy ocean pangeo-deploy ${CIRCLE_BRANCH}
-
-      - run:
-          name: Deploy hydro.pangeo.io
-          command: |
-            hubploy deploy hydro pangeo-deploy ${CIRCLE_BRANCH}
-
-      - run:
-          name: Deploy nasa.pangeo.io
-          command: |
-            hubploy deploy nasa pangeo-deploy ${CIRCLE_BRANCH}
-
-      - run:
-          name: Deploy icesat2.pangeo.io
-          command: |
-            hubploy deploy icesat2 pangeo-deploy ${CIRCLE_BRANCH}
-      
-      - run:
-          name: Deploy esip.pangeo.io
-          command: |
-            hubploy deploy esip pangeo-deploy ${CIRCLE_BRANCH}
-
-      - run:
-          name: Deploy ooi.pangeo.io
-          command: |
-            hubploy deploy ooi pangeo-deploy ${CIRCLE_BRANCH}
-          no_output_timeout: 1200
 
 workflows:
   version: 2
