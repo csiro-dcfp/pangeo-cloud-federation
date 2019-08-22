@@ -144,12 +144,12 @@ jobs:
             git crypt unlock ~/repo/default.key
             rm ~/repo/default.key
 
-      - run:
-          name: Unlock ooi secrets
-          command: |
-            echo "${OOI_GIT_CRYPT_KEY}" | base64 -d > ~/repo/ooi.key
-            git crypt unlock ~/repo/ooi.key
-            rm ~/repo/ooi.key
+#      - run:
+#          name: Unlock ooi secrets
+#          command: |
+#            echo "${OOI_GIT_CRYPT_KEY}" | base64 -d > ~/repo/ooi.key
+#            git crypt unlock ~/repo/ooi.key
+#            rm ~/repo/ooi.key
 
       - run:
           name: Build pangeo-csiro.munroelab.ca image if needed
