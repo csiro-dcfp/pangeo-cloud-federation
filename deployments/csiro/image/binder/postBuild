@@ -1,11 +1,8 @@
 #!/bin/bash
 
-jupyter serverextension enable --py nbserverproxy --sys-prefix
-jupyter labextension install @jupyter-widgets/jupyterlab-manager \
-                             @jupyterlab/hub-extension \
-                             @pyviz/jupyterlab_pyviz \
+jupyter labextension install @pyviz/jupyterlab_pyviz \
+                             @jupyterlab/geojson-extension \
                              jupyter-leaflet \
-                             dask-labextension
 
 # dask config
 # ${KERNEL_PYTHON_PREFIX} is set by repo2docker to sys.prefix
@@ -13,6 +10,7 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager \
 mkdir -p ${KERNEL_PYTHON_PREFIX}/etc/dask
 cp binder/dask_config.yaml ${KERNEL_PYTHON_PREFIX}/etc/dask/dask.yaml
 
-# conda config for user-created environments
-cp binder/user-condarc.txt ${KERNEL_PYTHON_PREFIX}/user-condarc.txt
+# make a copy of REPO_DIR since /home/jovyan overwritten by nfs mount on pangeo jupyterhubs
+mkdir ${CONDA_DIR}/build-repo
+cp -r ${REPO_DIR} ${CONDA_DIR}/build-repo
 #EOF

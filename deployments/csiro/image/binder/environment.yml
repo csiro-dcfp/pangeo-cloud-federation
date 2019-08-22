@@ -1,4 +1,4 @@
-name: pangeo
+name: nasa
 channels:
   - conda-forge
 dependencies:
@@ -26,10 +26,9 @@ dependencies:
   - pandas=0.25
   - geopandas=0.5
   - rasterio=1.0
-  - pyresample
-  - geocube
-  - regionmask
-  - nc-time-axis
+  - rio-cogeo=1.1
+  - sat-search=0.2
+  - sat-stac
   - nbgitpuller=0.7
   - pip=19.2
   - pip:
