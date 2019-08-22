@@ -9,19 +9,12 @@ dependencies:
   - gcsfs=0.3
   - intake=0.5
   - intake-xarray=0.3
-  - msgpack-python=0.6
-  - curl=7.64
   - xarray=0.12
   - zarr=2.3
   - h5py=2.9
   - h5netcdf=0.7
-  - dask=1.1
-  - distributed=1.25
-  - dask-kubernetes=0.8
   - matplotlib=3.1
-  - nbserverproxy=0.8.8
-  - jupyter=1.0.0
-  - ipywidgets=7.4
+  - ipywidgets=7.5
   - libgdal=2.4
   - boto3=1.9
   - awscli=1.16
@@ -29,7 +22,7 @@ dependencies:
   - geoviews-core=1.6
   - ipyleaflet=0.11
   - datashader=0.7
-  - requests=2.21
+  - requests=2.22
   - pandas=0.25
   - geopandas=0.5
   - rasterio=1.0
@@ -38,5 +31,6 @@ dependencies:
   - regionmask
   - nc-time-axis
   - nbgitpuller=0.7
+  - pip=19.2
   - pip:
     - git+https://github.com/pangeo-data/intake-stac.git
