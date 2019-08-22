@@ -13,34 +13,30 @@ kubernetes:
   name: dask-{JUPYTERHUB_USER}-{uuid}
   worker-template:
     spec:
-      nodeSelector:
-        alpha.eksctl.io/nodegroup-name: dask-worker
       restartPolicy: Never
       containers:
         - name: dask-${JUPYTERHUB_USER}
           image: ${JUPYTER_IMAGE_SPEC}
           args:
             - dask-worker
-            - --local-directory
-            - /home/jovyan/dask-worker-space
             - --nthreads
-            - '2'
+            - '1'
             - --no-dashboard
             - --memory-limit
-            - 7GB
+            - 1.25GB
             - --death-timeout
             - '60'
           resources:
             limits:
-              cpu: "1.75"
-              memory: 7G
+              cpu: "0.4"
+              memory: 1.25G
             requests:
-              cpu: 1
-              memory: 7G
+              cpu: "0.4"
+              memory: 1.25G
           volumeMounts:
             - name: nfs
               mountPath: /home/jovyan
-              subPath: "pangeo-csiro.munroelab.ca/home/${JUPYTERHUB_USER}"
+              subPath: "home/${JUPYTERHUB_USER}"
       volumes:
         - name: nfs
           persistentVolumeClaim:

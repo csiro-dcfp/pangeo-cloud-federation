@@ -13,8 +13,6 @@ kubernetes:
   name: dask-{JUPYTERHUB_USER}-{uuid}
   worker-template:
     spec:
-      nodeSelector:
-        alpha.eksctl.io/nodegroup-name: dask-worker
       restartPolicy: Never
       containers:
         - name: dask-${JUPYTERHUB_USER}
@@ -25,7 +23,7 @@ kubernetes:
             - /home/jovyan/dask-worker-space
             - --nthreads
             - '2'
-            - --no-bokeh
+            - --no-dashboard
             - --memory-limit
             - 7GB
             - --death-timeout

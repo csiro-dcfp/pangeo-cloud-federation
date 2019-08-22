@@ -1,3 +1,5 @@
-git+https://github.com/scottyhq/hubploy
+git+https://github.com/yuvipanda/hubploy
+jupyter-repo2docker>=0.10.0
 pygithub
 awscli
+azure-cli
