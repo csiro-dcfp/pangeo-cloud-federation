@@ -19,26 +19,24 @@ kubernetes:
           image: ${JUPYTER_IMAGE_SPEC}
           args:
             - dask-worker
-            - --local-directory
-            - /home/jovyan/dask-worker-space
             - --nthreads
-            - '2'
+            - '1'
             - --no-dashboard
             - --memory-limit
-            - 7GB
+            - 1.25GB
             - --death-timeout
             - '60'
           resources:
             limits:
-              cpu: "1.75"
-              memory: 7G
+              cpu: "0.4"
+              memory: 1.25G
             requests:
-              cpu: 1
-              memory: 7G
+              cpu: "0.4"
+              memory: 1.25G
           volumeMounts:
             - name: nfs
               mountPath: /home/jovyan
-              subPath: "nasa.pangeo.io/home/${JUPYTERHUB_USER}"
+              subPath: "home/${JUPYTERHUB_USER}"
       volumes:
         - name: nfs
           persistentVolumeClaim:
