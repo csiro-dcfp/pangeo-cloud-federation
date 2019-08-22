@@ -188,7 +188,7 @@ jobs:
             helm repo update
 
       - run:
-          when: always
+          name: Deploy pangeo-csiro.munroelab.ca 
           when: always
           command: |
             hubploy deploy csiro pangeo-deploy ${CIRCLE_BRANCH}
