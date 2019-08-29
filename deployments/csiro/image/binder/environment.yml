@@ -31,5 +31,8 @@ dependencies:
   - sat-stac
   - nbgitpuller=0.7
   - pip=19.2
+  - nc-time-axis
+  - climpred
+  - doppyo
   - pip:
     - git+https://github.com/pangeo-data/intake-stac.git
