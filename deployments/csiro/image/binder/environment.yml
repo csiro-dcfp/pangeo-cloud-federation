@@ -1,4 +1,4 @@
-name: nasa
+name: csiro-pangeo
 channels:
   - conda-forge
 dependencies:
@@ -34,5 +34,6 @@ dependencies:
   - nc-time-axis
   - climpred
   - doppyo
+  - esmlab
   - pip:
     - git+https://github.com/pangeo-data/intake-stac.git
